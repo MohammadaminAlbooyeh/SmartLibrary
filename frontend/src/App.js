@@ -3,6 +3,7 @@
 import Sidebar from './Sidebar';
 import Category from './Category';
 import MyLibrary from './MyLibrary';
+import Home from './Home';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -17,20 +18,10 @@ function App() {
         <Sidebar />
         <main style={{ flex: 1, background: '#fff', padding: '32px' }}>
           <Routes>
-            <Route path="/" element={
-              <>
-                <h1>Welcome to SmartLibrary</h1>
-                <p>Start building your library management system!</p>
-              </>
-            } />
+            <Route path="/" element={<Home />} />
             <Route path="/category" element={<Category />} />
             <Route path="/mylibrary" element={<MyLibrary />} />
-            <Route path="*" element={
-              <>
-                <h1>Welcome to SmartLibrary</h1>
-                <p>Start building your library management system!</p>
-              </>
-            } />
+            <Route path="*" element={<Home />} />
           </Routes>
         </main>
       </div>
