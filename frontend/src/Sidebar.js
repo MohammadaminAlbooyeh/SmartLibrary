@@ -1,7 +1,9 @@
 import React from "react";
 import "./Sidebar.css";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
+  const location = useLocation();
   return (
     <aside className="sidebar">
       <div className="sidebar-logo">
@@ -10,8 +12,16 @@ const Sidebar = () => {
       </div>
       <nav className="sidebar-nav">
         <ul>
-          <li className="active"><span role="img" aria-label="discover">🏠</span> Discover</li>
-          <li><span role="img" aria-label="category">📂</span> Category</li>
+          <li className={location.pathname === "/" ? "active" : ""}>
+            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <span role="img" aria-label="discover">🏠</span> Discover
+            </Link>
+          </li>
+          <li className={location.pathname === "/category" ? "active" : ""}>
+            <Link to="/category" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <span role="img" aria-label="category">📂</span> Category
+            </Link>
+          </li>
           <li><span role="img" aria-label="library">📖</span> My Library</li>
           <li className="sidebar-logout"><span role="img" aria-label="logout">🚪</span> Logout</li>
         </ul>
