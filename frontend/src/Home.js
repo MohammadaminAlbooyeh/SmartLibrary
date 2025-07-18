@@ -9,12 +9,12 @@ const recommendedBooks = [
 ];
 
 const categories = [
-  { id: 1, name: 'Sci-Fi' },
-  { id: 2, name: 'Fantasy' },
-  { id: 3, name: 'Drama' },
-  { id: 4, name: 'Business' },
-  { id: 5, name: 'Education' },
-  { id: 6, name: 'Geography' }
+  { id: 1, name: 'Sci-Fi', img: 'https://covers.openlibrary.org/b/id/10523342-L.jpg' },
+  { id: 2, name: 'Fantasy', img: 'https://covers.openlibrary.org/b/id/10523343-L.jpg' },
+  { id: 3, name: 'Drama', img: 'https://covers.openlibrary.org/b/id/10523344-L.jpg' },
+  { id: 4, name: 'Business', img: 'https://covers.openlibrary.org/b/id/10523345-L.jpg' },
+  { id: 5, name: 'Education', img: 'https://covers.openlibrary.org/b/id/10523346-L.jpg' },
+  { id: 6, name: 'Geography', img: 'https://covers.openlibrary.org/b/id/10523347-L.jpg' }
 ];
 
 function Home() {
@@ -39,7 +39,8 @@ function Home() {
         <h2 style={{ marginBottom: 16 }}>Categories</h2>
         <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
           {categories.map(cat => (
-            <div key={cat.id} style={{ background: '#f3f4f6', borderRadius: 8, padding: '12px 24px', fontWeight: 600, fontSize: 15, color: '#222', boxShadow: '0 1px 4px rgba(0,0,0,0.04)' }}>
+            <div key={cat.id} style={{ background: '#f3f4f6', borderRadius: 8, padding: '12px 24px', fontWeight: 600, fontSize: 15, color: '#222', boxShadow: '0 1px 4px rgba(0,0,0,0.04)', display: 'flex', alignItems: 'center', gap: 12 }}>
+              <img src={cat.img} alt={cat.name} style={{ width: 36, height: 48, objectFit: 'cover', borderRadius: 6, marginRight: 8 }} />
               {cat.name}
             </div>
           ))}
