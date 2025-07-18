@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+
+import Sidebar from './Sidebar';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ display: 'flex', minHeight: '100vh' }}>
+      <Sidebar />
+      <main style={{ flex: 1, background: '#fff', padding: '32px' }}>
+        {/* Home page content will go here */}
+        <h1>Welcome to SmartLibrary</h1>
+        <p>Start building your library management system!</p>
+      </main>
     </div>
   );
 }
