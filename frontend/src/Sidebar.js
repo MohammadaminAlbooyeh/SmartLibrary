@@ -14,7 +14,7 @@ const Sidebar = () => {
         <ul>
           <li className={location.pathname === "/" ? "active" : ""}>
             <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <span role="img" aria-label="discover">🏠</span> Discover
+              <span role="img" aria-label="discover">🏠</span> Discovery
             </Link>
           </li>
           <li className={location.pathname === "/category" ? "active" : ""}>
@@ -22,7 +22,11 @@ const Sidebar = () => {
               <span role="img" aria-label="category">📂</span> Category
             </Link>
           </li>
-          <li><span role="img" aria-label="library">📖</span> My Library</li>
+          <li className={location.pathname === "/mylibrary" ? "active" : ""}>
+            <Link to="/mylibrary" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <span role="img" aria-label="library">📖</span> My Library
+            </Link>
+          </li>
           <li className="sidebar-logout"><span role="img" aria-label="logout">🚪</span> Logout</li>
         </ul>
       </nav>

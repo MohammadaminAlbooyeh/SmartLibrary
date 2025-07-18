@@ -2,6 +2,7 @@
 
 import Sidebar from './Sidebar';
 import Category from './Category';
+import MyLibrary from './MyLibrary';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -23,6 +24,7 @@ function App() {
               </>
             } />
             <Route path="/category" element={<Category />} />
+            <Route path="/mylibrary" element={<MyLibrary />} />
             <Route path="*" element={
               <>
                 <h1>Welcome to SmartLibrary</h1>
