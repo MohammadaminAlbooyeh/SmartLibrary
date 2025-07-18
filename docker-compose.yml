@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend/database:/app/database
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+    depends_on:
+      - db
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+  db:
+    image: nouchka/sqlite3:latest
+    volumes:
+      - ./backend/database:/data
+    command: ["tail", "-f", "/dev/null"]
+    # SQLite is file-based, this container is just for volume sharing

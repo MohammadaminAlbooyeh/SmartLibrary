@@ -1,0 +1,6 @@
+com/smartlibrary/BackendApplication.class
+com/smartlibrary/App.class
+com/smartlibrary/repository/BookRepository.class
+com/smartlibrary/model/Book.class
+com/smartlibrary/sqlite/SQLiteDialect.class
+com/smartlibrary/controller/BookController.class
